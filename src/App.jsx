@@ -11,19 +11,15 @@ export const AppContext = createContext();
 
 function App() {
   const { ref: homeRef, inView: homeIsVisible } = useInView({
-    rootMargin: "-100px",
     threshold: 0.2,
   });
   const { ref: aboutRef, inView: aboutIsVisible } = useInView({
-    rootMargin: "-100px",
     threshold: 0.2,
   });
   const { ref: portfolioRef, inView: portfolioIsVisible } = useInView({
-    rootMargin: "-100px",
     threshold: 0.2,
   });
   const { ref: contactRef, inView: contactIsVisible } = useInView({
-    rootMargin: "-100px",
     threshold: 0.2,
   });
 
