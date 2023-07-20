@@ -32,7 +32,6 @@ function Home({ homeRef, homeIsVisible }) {
           link={
             "https://res.cloudinary.com/dbv6hao81/image/upload/v1689584105/Robera_Abera_Resume_Web_Developer_vczn9m.pdf"
           }
-          btnType={"download"}
           value={"Download CV"}
           classname={"btn btn-download"}
         />

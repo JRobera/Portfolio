@@ -1,6 +1,6 @@
 import React from "react";
 import "./BtnGlow.css";
-function BtnGlow({ link, value, classname, btnType, aboutIsVisible }) {
+function BtnGlow({ link, value, classname, aboutIsVisible }) {
   return (
     <a
       href={link}

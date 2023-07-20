@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Portfolio.css";
-import projects from "../../assets/prolist";
-import p1 from "../../assets/p1.png";
-import p2 from "../../assets/p2.png";
-import p3 from "../../assets/p3.jfif";
-import p4 from "../../assets/p4.jfif";
-import p5 from "../../assets/p5.jfif";
-import p6 from "../../assets/p6.jfif";
+import axios from "axios";
 
 function Portfolio({ portfolioRef, portfolioIsVisible }) {
+  const [projects, setProjects] = useState();
+  useEffect(() => {
+    axios
+      .get("https://roberas-api.onrender.com/api/get-projects")
+      .then((response) => {
+        setProjects(response.data);
+      });
+  }, []);
   return (
     <section ref={portfolioRef} className="portfolio" id="portfolio">
       <h2
