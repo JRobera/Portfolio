@@ -17,10 +17,10 @@ function App() {
     threshold: 0.2,
   });
   const { ref: portfolioRef, inView: portfolioIsVisible } = useInView({
-    threshold: 0.2,
+    threshold: 0.1,
   });
   const { ref: contactRef, inView: contactIsVisible } = useInView({
-    threshold: 0.2,
+    threshold: 0.1,
   });
 
   return (

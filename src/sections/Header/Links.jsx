@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { AppContext } from "../../App";
 
-function Links({ url, name, classname }) {
+function Links({ url, name, classname, handleClick }) {
   const {
     homeIsVisible,
     aboutIsVisible,
@@ -17,7 +17,9 @@ function Links({ url, name, classname }) {
       {name}
     </a>
   ) : (
-    <a href={url}>{name}</a>
+    <a href={url} onClick={handleClick}>
+      {name}
+    </a>
   );
 }
 

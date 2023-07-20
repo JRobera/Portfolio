@@ -28,8 +28,8 @@
   flex-wrap: wrap;
 }
 
-.contact form .input-box input,
-.contact form textarea {
+.contact form .input-box div input,
+.contact form div textarea {
   width: 100%;
   padding: 1.5rem;
   font-size: 1.6rem;
@@ -39,12 +39,17 @@
   margin: 0.7rem 0;
 }
 
-.contact form .input-box input {
+.contact form .input-box div {
   width: 49%;
 }
 
 .contact form textarea {
   resize: none;
+}
+
+.error {
+  color: red;
+  text-align: left;
 }
 
 .contact form .btn {

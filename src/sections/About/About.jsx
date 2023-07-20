@@ -12,14 +12,12 @@ function About({ aboutRef, aboutIsVisible }) {
         <h2 className={aboutIsVisible ? "heading heading-visible" : "heading"}>
           About <span>Me</span>
         </h2>
-        <h3 className={aboutIsVisible ? "my-title" : null}>
-          Frontend Developer
-        </h3>
+        <h3 className={aboutIsVisible ? "my-title" : null}>Web Developer</h3>
         <p className={aboutIsVisible ? "my-description" : null}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. At cumque
-          corporis in, ratione fuga eligendi doloremque numquam! Iusto officiis
-          nam voluptatum ullam, vitae beatae doloremque harum, maxime amet neque
-          voluptatem.
+          I am highly motivated Computer Science graduate with
+          intermediate-level skills in ReactJS, Node.js, and MongoDB, seeking a
+          junior developer position to further develop and apply knowledge in
+          web development.
         </p>
         <BtnGlow
           link="#"

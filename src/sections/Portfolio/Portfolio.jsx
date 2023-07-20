@@ -1,5 +1,6 @@
 import React from "react";
 import "./Portfolio.css";
+import projects from "../../assets/prolist";
 import p1 from "../../assets/p1.png";
 import p2 from "../../assets/p2.png";
 import p3 from "../../assets/p3.jfif";
@@ -23,84 +24,25 @@ function Portfolio({ portfolioRef, portfolioIsVisible }) {
             : "portfolio-container"
         }
       >
-        <div className="portfolio-box">
-          <img src={p1} alt="" />
-          <div className="portfolio-layer">
-            <h4>Advice Generator</h4>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              quibusdam assumenda expedita ipsa natus.
-            </p>
-            <a href="https://jrobera.github.io/Advice-generator-app/">
-              <box-icon name="link-external"></box-icon>
-            </a>
-          </div>
-        </div>
-        <div className="portfolio-box">
-          <img src={p2} alt="" />
-          <div className="portfolio-layer">
-            <h4>ToDo App</h4>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              quibusdam assumenda expedita ipsa natus.
-            </p>
-            <a href="https://jrobera.github.io/Todo-app/">
-              <box-icon name="link-external"></box-icon>
-            </a>
-          </div>
-        </div>
-        <div className="portfolio-box">
-          <img src={p3} alt="" />
-          <div className="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              quibusdam assumenda expedita ipsa natus.
-            </p>
-            <a href="#">
-              <box-icon name="link-external"></box-icon>
-            </a>
-          </div>
-        </div>
-        <div className="portfolio-box">
-          <img src={p4} alt="" />
-          <div className="portfolio-layer">
-            <h4>ToDo App</h4>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              quibusdam assumenda expedita ipsa natus.
-            </p>
-            <a href="https://jrobera.github.io/Todo-app/">
-              <box-icon name="link-external"></box-icon>
-            </a>
-          </div>
-        </div>
-        <div className="portfolio-box">
-          <img src={p5} alt="" />
-          <div className="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              quibusdam assumenda expedita ipsa natus.
-            </p>
-            <a href="#">
-              <box-icon name="link-external"></box-icon>
-            </a>
-          </div>
-        </div>
-        <div className="portfolio-box">
-          <img src={p6} alt="" />
-          <div className="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              quibusdam assumenda expedita ipsa natus.
-            </p>
-            <a href="#">
-              <box-icon name="link-external"></box-icon>
-            </a>
-          </div>
-        </div>
+        {projects?.map((project, i) => {
+          return (
+            <div className="portfolio-box" key={i}>
+              <img src={project?.image} alt="" />
+              <div className="portfolio-layer">
+                <h4>{project?.name}</h4>
+                <p>{project?.description}</p>
+                <div className="portfolio-links">
+                  <a href={project?.livelink} target="_blank">
+                    <box-icon name="link-external"></box-icon>
+                  </a>
+                  <a href={project?.github} target="_blank">
+                    <box-icon name="code-alt"></box-icon>
+                  </a>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

@@ -10,6 +10,10 @@ function Header() {
     { url: "#portfolio", name: "Portfolio", classname: "active" },
     { url: "#contact", name: "Contact", classname: "active" },
   ];
+  function handleClick() {
+    setActive(!active);
+  }
+
   return (
     <header className="header">
       <a href="#" className="logo">
@@ -19,9 +23,7 @@ function Header() {
         color="white"
         id="menu-icon"
         name={active ? "x" : "menu"}
-        onClick={() => {
-          setActive(!active);
-        }}
+        onClick={handleClick}
       ></box-icon>
 
       <nav className={active ? "navbar collapse" : "navbar"}>
@@ -32,6 +34,7 @@ function Header() {
               url={link.url}
               name={link.name}
               classname={link.classname}
+              handleClick={handleClick}
             />
           );
         })}

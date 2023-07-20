@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import BtnGlow from "../BtnGlow";
 import "./Home.css";
+import SocialMedia from "./SocialMedia";
 
 function Home({ homeRef, homeIsVisible }) {
   return (
@@ -14,26 +15,24 @@ function Home({ homeRef, homeIsVisible }) {
           And I'm a <span>Web Developer</span>
         </h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.. Minima, nisi
-          porro? Repudiandae, iste doloribus.
+          Committed to delivering efficient and scalable solutions while
+          continuously expanding expertise in software developmenttechnologies.
         </p>
         <div className="social-media">
-          <a href="#">
+          {/* <a href="#">
             <box-icon type="logo" name="facebook"></box-icon>
           </a>
           <a href="#">
             <box-icon type="logo" name="twitter"></box-icon>
-          </a>
-          <a href="#">
-            <box-icon type="logo" name="instagram-alt"></box-icon>
-          </a>
-          <a href="#">
-            <box-icon type="logo" name="linkedin"></box-icon>
-          </a>
+          </a> */}
+          <SocialMedia link={"#"} name={"github"} />
+          <SocialMedia link={"#"} name={"linkedin"} />
         </div>
         <BtnGlow
-          link={"#"}
-          btnType={true}
+          link={
+            "https://res.cloudinary.com/dbv6hao81/image/upload/v1689584105/Robera_Abera_Resume_Web_Developer_vczn9m.pdf"
+          }
+          btnType={"download"}
           value={"Download CV"}
           classname={"btn btn-download"}
         />
