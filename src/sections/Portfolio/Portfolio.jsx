@@ -1,16 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useQuery } from "@tanstack/react-query";
+import { ColorRing } from "react-loader-spinner";
 import "./Portfolio.css";
 import axios from "axios";
 
 function Portfolio({ portfolioRef, portfolioIsVisible }) {
-  const [projects, setProjects] = useState();
-  useEffect(() => {
-    axios
+  const {
+    data: projects,
+    isLoading,
+    isError,
+  } = useQuery(["projects"], () => {
+    return axios
       .get("https://roberas-api.onrender.com/api/get-projects")
       .then((response) => {
-        setProjects(response.data);
+        return response.data;
       });
-  }, []);
+  });
+  if (isLoading) {
+    return (
+      <ColorRing
+        visible={true}
+        height="90"
+        width="90"
+        ariaLabel="blocks-loading"
+        wrapperStyle={{ width: "100%" }}
+        wrapperClass="blocks-wrapper"
+        colors={["#0ef", "#0ef", "#0ef", "#0ef", "#0ef"]}
+      />
+    );
+  }
   return (
     <section ref={portfolioRef} className="portfolio" id="portfolio">
       <h2
@@ -18,7 +36,6 @@ function Portfolio({ portfolioRef, portfolioIsVisible }) {
       >
         Latest <span>Project</span>
       </h2>
-
       <div
         className={
           portfolioIsVisible
