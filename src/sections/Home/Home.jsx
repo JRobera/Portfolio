@@ -25,12 +25,12 @@ function Home({ homeRef, homeIsVisible }) {
           <a href="#">
             <box-icon type="logo" name="twitter"></box-icon>
           </a> */}
-          <SocialMedia link={"#"} name={"github"} />
-          <SocialMedia link={"#"} name={"linkedin"} />
+          <SocialMedia link={"https://github.com/JRobera"} name={"github"} />
+          {/* <SocialMedia link={"#"} name={"linkedin"} /> */}
         </div>
         <BtnGlow
           link={
-            "https://res.cloudinary.com/dbv6hao81/image/upload/v1689584105/Robera_Abera_Resume_Web_Developer_vczn9m.pdf"
+            "https://res.cloudinary.com/dbv6hao81/image/upload/v1695114995/Robera_Abera_-_Public_CV_-_CVDesignR_easifq.pdf"
           }
           value={"Download CV"}
           classname={"btn btn-download"}
