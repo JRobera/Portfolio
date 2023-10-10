@@ -14,7 +14,7 @@ function Portfolio({ portfolioRef, portfolioIsVisible }) {
     return axios
       .get("https://roberas-api.onrender.com/api/get-projects")
       .then((response) => {
-        return response.data;
+        setTimeout(() => response.data, 10000);
       });
   });
   return (
@@ -31,29 +31,27 @@ function Portfolio({ portfolioRef, portfolioIsVisible }) {
             : "portfolio-container"
         }
       >
-        {isLoading ? (
-          <ProjectSkeleton />
-        ) : (
-          projects?.map((project, i) => {
-            return (
-              <div className="portfolio-box" key={i}>
-                <img src={project?.image} alt="" />
-                <div className="portfolio-layer">
-                  <h4>{project?.name}</h4>
-                  <p>{project?.description}</p>
-                  <div className="portfolio-links">
-                    <a href={project?.livelink} target="_blank">
-                      <box-icon name="link-external"></box-icon>
-                    </a>
-                    <a href={project?.github} target="_blank">
-                      <box-icon name="code-alt"></box-icon>
-                    </a>
+        {isLoading
+          ? [...Array(4).keys()].map((i) => <ProjectSkeleton key={i} />)
+          : projects?.map((project, i) => {
+              return (
+                <div className="portfolio-box" key={i}>
+                  <img src={project?.image} alt="" />
+                  <div className="portfolio-layer">
+                    <h4>{project?.name}</h4>
+                    <p>{project?.description}</p>
+                    <div className="portfolio-links">
+                      <a href={project?.livelink} target="_blank">
+                        <box-icon name="link-external"></box-icon>
+                      </a>
+                      <a href={project?.github} target="_blank">
+                        <box-icon name="code-alt"></box-icon>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })
-        )}
+              );
+            })}
       </div>
     </section>
   );
