@@ -14,7 +14,7 @@ function Portfolio({ portfolioRef, portfolioIsVisible }) {
     return axios
       .get("https://roberas-api.onrender.com/api/get-projects")
       .then((response) => {
-        setTimeout(() => response.data, 10000);
+        return response.data;
       });
   });
   return (
