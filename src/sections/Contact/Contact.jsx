@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import axios from "axios";
 import Swal from "sweetalert2";
 import "./Contact.css";
+import api from "../../util/axios";
 
 function Contact({ contactRef, contactIsVisible }) {
   const schema = yup.object().shape({
@@ -31,13 +31,11 @@ function Contact({ contactRef, contactIsVisible }) {
 
   const onSubmit = (data) => {
     setIsSending(true);
-    axios
-      .post("https://roberas-api.onrender.com/api/send-message", { data })
-      .then((response) => {
-        response && Swal.fire(response?.data, "Your message have been send.");
-        setIsSending(false);
-        reset();
-      });
+    api.post("/api/send-message", { data }).then((response) => {
+      response && Swal.fire(response?.data, "Your message have been send.");
+      setIsSending(false);
+      reset();
+    });
   };
 
   return (

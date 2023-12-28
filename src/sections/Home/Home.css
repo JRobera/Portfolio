@@ -6,6 +6,7 @@
 }
 
 .home-img img {
+  border-radius: 10%;
   width: 35vw;
   animation: float 4s ease-in-out infinite alternate;
 }

@@ -2,20 +2,18 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { ColorRing } from "react-loader-spinner";
 import "./Portfolio.css";
-import axios from "axios";
 import ProjectSkeleton from "../../components/ProjectSkeleton";
+import api from "../../util/axios";
 
 function Portfolio({ portfolioRef, portfolioIsVisible }) {
   const {
     data: projects,
     isLoading,
     isError,
-  } = useQuery(["projects"], () => {
-    return axios
-      .get("https://roberas-api.onrender.com/api/get-projects")
-      .then((response) => {
-        return response.data;
-      });
+  } = useQuery(["projects"], async () => {
+    return api.get("/api/get-projects").then((response) => {
+      return response.data;
+    });
   });
   return (
     <section ref={portfolioRef} className="portfolio" id="portfolio">

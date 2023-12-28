@@ -37,7 +37,7 @@ function Home({ homeRef, homeIsVisible }) {
         />
       </div>
       <div className={homeIsVisible ? "home-img home-img-visible" : "home-img"}>
-        <img src="/photo_me.jpg" alt="photo of me" />
+        <img src="/images.jpg" alt="photo of me" />
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ function About({ aboutRef, aboutIsVisible }) {
   return (
     <section ref={aboutRef} className="about" id="about">
       <div className={aboutIsVisible ? "about-img about-visible" : "about-img"}>
-        <img src="/photo_me.jpg" alt="" />
+        <img src="/images11.png" alt="" />
       </div>
       <div className="about-content">
         <h2 className={aboutIsVisible ? "heading heading-visible" : "heading"}>
@@ -19,12 +19,12 @@ function About({ aboutRef, aboutIsVisible }) {
           junior developer position to further develop and apply knowledge in
           web development.
         </p>
-        <BtnGlow
+        {/* <BtnGlow
           link="#"
           value={"Read More"}
           classname={"btn"}
           aboutIsVisible={aboutIsVisible}
-        />
+        /> */}
       </div>
     </section>
   );
